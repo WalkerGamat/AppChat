@@ -1,0 +1,36 @@
+html, body{
+    background-color: #555;
+    margin: 0 ;
+    padding: 0;
+    color : white;
+}
+.obj1{
+    box-sizing: content-box;
+    border:1px solid #FFF;
+    width:100%;
+    grid-column: 1;
+    
+}
+.obj2{
+    box-sizing: content-box;
+    border:1px solid #FFF;
+    width: 100%;
+    grid-column: 2;
+    
+}
+.container{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'cl1 cl2';
+}
+.obj3{
+        box-sizing: content-box;
+        border:1px solid #FFF;
+        grid-area: 2/1;
+}
+.obj4{
+    box-sizing: content-box;    
+    border:1px solid #FFF;
+    grid-area: 2/2;
+}

@@ -1,0 +1,217 @@
+*{
+    padding: 0;
+    margin: 0 auto;
+}
+
+html{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(to left, #57c1eb 0%, #246fa8 100%);
+}
+
+body{
+    place-items: center;
+    background:linear-gradient(to left, #57c1eb 0%, #246fa8 100%);
+    height:100%;
+}
+div{
+    
+    box-sizing: border-box;
+}
+#chat-container{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 200px auto auto;
+    grid-template-rows: 50px 400px 50px;
+    min-width: 600px;
+    max-width: 650px;
+    height: 500px;
+    margin: 30px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#search-container{
+    grid-area: 1 / 1 / 1 / 1;
+    width: 100%;
+    align-content: center;
+    background-color: rgb(59, 59, 172);
+    border-radius: 20px 0 0 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    box-shadow: 0 1px 3px -1px black;
+}
+#search-submit{
+    padding-left: 10px;
+    height: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    width: 150px;
+    color:white;
+    background-color: rgb(100, 100, 243);
+    border:0;
+    border-radius: 5px;
+    
+}
+#chat-list{
+    grid-area: 2 / 1 / 2 / 1;
+    height:  100%;
+    width: 100%;
+    background-color: rgb(57, 57, 202);
+    overflow-y:scroll;
+    scrollbar-width: none;/*invisible scrollbar*/
+}
+.conversation{
+    display: grid;
+    color:white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    border-bottom: 1px rgb(57, 57, 202);
+    overflow:hidden;
+    padding-top:15px;
+    padding-bottom: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.conversation:hover{
+    background-color:rgb(46, 46, 175);
+}
+.conversation[activated]{
+    background-color:rgb(0, 0, 136);
+}
+.profile-logo{
+    grid-area: 1/1/span 2/1;
+    border-radius:100%;
+    margin-right: 5px;
+}
+.conversation > .name{
+    grid-area: 1/ 2/ 1/ 2;
+    margin-left: 0;
+    margin-right: 0;
+}
+.conversation > .date{
+    font-size: 0.7rem;
+    grid-area: 1/ 3/1/ span 3;
+    margin-right: 0;
+}
+.conversation > .description{
+    grid-area: 2/ 2 / 2/ span 3;
+    margin-left: 0;
+    margin-right: 0;
+}
+.add-users{
+    background-color: rgb(57, 57, 202);
+    grid-area: 3 / 1 / 3 / span 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 0 20px;
+    padding-left: 20px;
+}
+.btn-add-user{
+    border-radius: 100%;
+    border:none;
+    background-color: #fff;
+    width:40px;
+    height:40px;
+    text-align: center;
+    text-decoration: none;
+}
+#chat-title{
+    grid-area:1 / 2 / 1 / span 2;
+    width: 100%;
+    border-radius: 0 20px 0 0;
+    background-color: rgb(201, 189, 189);
+    text-align: center;
+    padding: 0;
+    box-shadow: 0 1px 3px -1px black;
+}
+#chat-title > h2 {
+    display:flex;
+    color: white;
+    height: 100%;
+    align-items: center;/*vertical*/
+    justify-content: center;/*horizontal*/
+
+}
+#chat-message-list{
+    grid-area: 2 / 2 / 2 / span 2;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+/*this only for chrome*/
+::-webkit-scrollbar{
+    display:none;
+}
+#chat-form{
+    grid-area: 3 / 2 / 3 / span 2;
+    width: 100%;
+    border-radius: 0 0 20px 0;
+    box-sizing: content-box;
+    background-color: rgb(201, 189, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#message-input{
+    height: auto;
+    width: 300px;
+    max-width:900px;
+}
+#btn-send{
+    padding: 5px;
+    color: white;
+    background-color: blue;
+    border: 1px solid transparent;
+    border-radius:5px;
+    font-size: 1rem;
+}
+.welcome-message{
+    background-color: rgb(180, 78, 180);
+    width: 90%;
+    height: 20px;
+    margin-top: 5px;
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+}
+.your-message{
+    width: 90%;
+    margin:20px;
+    display: grid;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.others-message-container{
+    justify-content: left;
+}
+.My-message-container{
+    justify-content: right;
+}
+.message{
+    margin-bottom: 3px;
+    border-radius: 3px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.other-message{
+    background-color: rgb(196, 194, 194);
+}
+.My-message{
+    background-color: rgb(0, 0, 255);
+    color:white;
+}
+.timestamped{
+    margin: 0;
+    font-size: 0.7rem;
+    color: gray;
+    font-weight: bold;
+}
+.My-time{
+    text-align: right;
+}

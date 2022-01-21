@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- to be responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!--
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    -->
+</head>
+<body>
+    <div id="chat-container">
+        <div id="search-container">
+            <input type="text" id='search-submit' name="search-submit" placeholder="Search">
+        </div>
+        <div id="chat-title">
+            <h2>CordTchat</h2>
+        </div>
+        <div id="chat-list">
+            <div class="conversation" activated >
+                <img src="./img/dolby.jpeg" alt="profile-img" class="profile-logo" width='50'>
+                <div class="name">
+                    Eric
+                </div>
+                <div class="date">
+                    9/12/2021
+                </div>
+                <div class="description">
+                    live in southpark 
+                </div>
+            </div>   
+            <div class="conversation">
+                <img src="./img/dolby.jpeg" alt="profile-img" class="profile-logo" width='50'>
+                <div class="name">
+                    Eric
+                </div>
+                <div class="date">
+                    9/12/2021
+                </div>
+                <div class="description">
+                    live in southpark 
+                </div>
+            </div>
+        </div>
+        <!-- add users -->   
+        <div class="add-users">
+            <button class="btn-add-user" onclick="prompt('inter user ID')">+</button>
+        </div>
+        <div id="chat-message-list">
+            <!-- changing with js-->
+            <!-- banner when user connects-->
+            <div id='banner' class="welcome-message" hidden='true'>
+                Welcome to Discord tchat
+            </div>
+            <!-- messages-->
+            <div class="your-message others-message-container">
+                <p class='message other-message'>
+                    Hi!
+                </p>
+                <div class='timestamped'>12:53</div>
+            </div>
+            <!-- end row message-->
+            <div class="your-message others-message-container">
+                <p class='message other-message'>
+                    minima inventore reprehenderit illum? Voluptates numquam cumque voluptatum reprehenderit cupiditate?
+                </p>
+                <div class='timestamped'>12:53</div>
+            </div>
+            <div class="your-message My-message-container" myself='true'>
+                <p class='message My-message'>
+                    Hi! it me?!
+                     veritatis rem aperiam nulla laudantium voluptatem laboriosam saepe sint quia molestiae minus dolorum. Numquam eligendi laudantium quis quasi.
+                </p>
+                <div class='timestamped My-time'>12:53</div>
+            </div>
+        </div>
+        <div id="chat-form">
+                <form id="send-container" method="POST" action="/">
+                    <button type="Button" id="btn-send">Submit</button>
+                    <input type="text" name="message-input" id="message-input" aria-describedby="send-btn">
+                </form>
+        </div>
+
+    </div>
+        
+    <!-- scripts -->
+        <!-- Bootstrap requirements-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        <!-- my scripts-->
+    <script src='/socket.io/socket.io.js'></script>
+  <!--
+
+--> 
+    <script src="script.js"></script>
+</body>
+</html>
